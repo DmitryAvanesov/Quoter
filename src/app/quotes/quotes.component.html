@@ -1,8 +1,9 @@
-<h2>My quotes</h2>
+<h2 class="title">My quotes</h2>
 <ul class="quotes">
-  <li *ngFor="let quote of quotes">
+  <li class="quote" *ngFor="let quote of quotes">
     <span class="id">{{ quote.id }}</span>
     <span class="author">{{ quote.author }}</span>
+    <br />
     <span class="text">{{ quote.text }}</span>
   </li>
 </ul>
