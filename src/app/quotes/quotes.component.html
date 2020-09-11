@@ -1,9 +1,16 @@
-<h2 class="title">My quotes</h2>
+<h2 class="title">MY QUOTES</h2>
+
 <ul class="quotes">
-  <li class="quote" *ngFor="let quote of quotes">
+  <li class="quote" *ngFor="let quote of quotes" (click)="onClickQuote(quote)">
     <span class="id">{{ quote.id }}</span>
     <span class="author">{{ quote.author }}</span>
     <br />
     <span class="text">{{ quote.text }}</span>
   </li>
 </ul>
+
+<div class="details" *ngIf="selectedQuote">
+  <h2>Quote #{{ selectedQuote.id }} details</h2>
+  <div>Author: {{ selectedQuote.author }}</div>
+  <div>Text: {{ selectedQuote.text }}</div>
+</div>
