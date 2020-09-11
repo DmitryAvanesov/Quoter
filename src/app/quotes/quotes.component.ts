@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Quote } from '../quote';
+import { QUOTES } from '../mock-quotes';
 
 @Component({
   selector: 'app-quotes',
@@ -7,11 +7,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quotes.component.scss'],
 })
 export class QuotesComponent implements OnInit {
-  quote: Quote = {
-    id: 1,
-    title: 'Sample title',
-    text: 'Sample quote text lmao text lmao text',
-  };
+  quotes = QUOTES;
 
   constructor() {}
 

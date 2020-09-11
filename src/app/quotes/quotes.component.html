@@ -1,7 +1,8 @@
-<h2>{{ quote.title }} Details</h2>
-<div><span>id: </span>{{ quote.id }}</div>
-<div>
-  <label for="">
-    <input type="text" [(ngModel)]="quote.text" placeholder="text" />
-  </label>
-</div>
+<h2>My quotes</h2>
+<ul class="quotes">
+  <li *ngFor="let quote of quotes">
+    <span class="id">{{ quote.id }}</span>
+    <span class="author">{{ quote.author }}</span>
+    <span class="text">{{ quote.text }}</span>
+  </li>
+</ul>
