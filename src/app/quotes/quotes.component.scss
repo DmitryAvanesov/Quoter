@@ -1,4 +1,5 @@
 $quote-background-color: #f6f6f6;
+$quote-selected-background-color: #eeeeee;
 $id-color: #48baf9;
 $id-background-color: #e1ecf4;
 
@@ -33,5 +34,14 @@ ul.quotes {
       display: inline-block;
       margin-top: 15px;
     }
+  }
+
+  li.quote:hover {
+    cursor: pointer;
+    background-color: $quote-selected-background-color;
+  }
+
+  li.quote.selected {
+    background-color: $quote-selected-background-color;
   }
 }
