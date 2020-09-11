@@ -9,7 +9,8 @@ import { Quote } from '../quote';
 export class QuotesComponent implements OnInit {
   quote: Quote = {
     id: 1,
-    text: 'Sample quote',
+    title: 'Sample title',
+    text: 'Sample quote text lmao text lmao text',
   };
 
   constructor() {}

@@ -1,3 +1,7 @@
-<h2>{{ quote.id }} Details</h2>
+<h2>{{ quote.title }} Details</h2>
 <div><span>id: </span>{{ quote.id }}</div>
-<div><span>text: </span>{{ quote.text | uppercase }}</div>
+<div>
+  <label for="">
+    <input type="text" [(ngModel)]="quote.text" placeholder="text" />
+  </label>
+</div>
