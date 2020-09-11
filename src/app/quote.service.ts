@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Quote } from './quote';
 import { QUOTES } from './mock-quotes';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { QUOTES } from './mock-quotes';
 export class QuoteService {
   constructor() {}
 
-  getQuotes(): Quote[] {
-    return QUOTES;
+  getQuotes(): Observable<Quote[]> {
+    return of(QUOTES);
   }
 }

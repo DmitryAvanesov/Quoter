@@ -12,7 +12,9 @@ export class QuotesComponent implements OnInit {
   selectedQuote: Quote;
 
   getQuotes(): void {
-    this.quotes = this.quoteService.getQuotes();
+    this.quoteService.getQuotes().subscribe((quotes) => {
+      this.quotes = quotes;
+    });
   }
 
   onClickQuote(quote: Quote): void {
