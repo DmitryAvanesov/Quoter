@@ -14,8 +14,4 @@
   </li>
 </ul>
 
-<div class="details" *ngIf="selectedQuote">
-  <h2>Quote #{{ selectedQuote.id }} details</h2>
-  <div>Author: {{ selectedQuote.author }}</div>
-  <div>Text: {{ selectedQuote.text }}</div>
-</div>
+<app-quote-detail [quote]="selectedQuote"></app-quote-detail>
