@@ -1,0 +1,47 @@
+$quote-background-color: #f6f6f6;
+$quote-selected-background-color: #eeeeee;
+$id-color: #48baf9;
+$id-background-color: #e1ecf4;
+
+h2.title {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+ul.quotes {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li.quote {
+    margin: 25px 0;
+    padding: 15px 10px 10px;
+    background-color: $quote-background-color;
+
+    span.id {
+      color: $id-color;
+      background-color: $id-background-color;
+      padding: 5px 10px;
+      border-radius: 1px;
+      margin-right: 10px;
+    }
+
+    span.author {
+      font-weight: 700;
+    }
+
+    span.text {
+      display: inline-block;
+      margin-top: 15px;
+    }
+  }
+
+  li.quote:hover {
+    cursor: pointer;
+    background-color: $quote-selected-background-color;
+  }
+
+  li.quote.selected {
+    background-color: $quote-selected-background-color;
+  }
+}
