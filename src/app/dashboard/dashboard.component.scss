@@ -2,6 +2,7 @@
 
 h2.title {
   font-size: 2em;
+  text-transform: uppercase;
   font-weight: 500;
   margin-top: 0;
 }
@@ -25,6 +26,7 @@ div.dashboard {
 
     p.text {
       margin: 0;
+      white-space: pre-wrap;
     }
   }
 

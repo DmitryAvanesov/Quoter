@@ -2,6 +2,7 @@
 
 h2.title {
   font-size: 2em;
+  text-transform: uppercase;
   font-weight: 500;
   margin-top: 0;
 }
@@ -34,7 +35,6 @@ ul.quotes {
     }
 
     span.text {
-      display: inline-block;
       margin-top: 15px;
       white-space: pre-wrap;
     }

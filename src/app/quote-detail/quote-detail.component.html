@@ -1,5 +1,6 @@
 <div class="detail" *ngIf="quote">
-    <h2>Quote #{{ quote.id }} details</h2>
-    <div>Author: {{ quote.author }}</div>
-    <div>Text: {{ quote.text }}</div>
-  </div>
+  <h2 class="title">Quote #{{ quote.id }} details</h2>
+  <p><span class="subtitle">Author:</span> {{ quote.author }}</p>
+  <p><span class="subtitle">Text:</span> {{ quote.text }}</p>
+  <button class="go-back-button" (click)="goBack()">Go back</button>
+</div>
