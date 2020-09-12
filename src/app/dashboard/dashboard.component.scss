@@ -1,0 +1,41 @@
+@import "../../styles.scss";
+
+h2.title {
+  font-size: 2em;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+div.dashboard {
+  display: flex;
+  justify-content: space-between;
+
+  a.element {
+    flex: 1 1 0px;
+    margin: 0 25px;
+    padding: 15px;
+    background-color: $gray-background;
+    box-shadow: 5px 5px 5px 0px $dark-gray-background;
+
+    h3.author {
+      margin: 0 0 10px;
+    }
+
+    p.text {
+      margin: 0;
+    }
+  }
+
+  a.element:first-of-type {
+    margin-left: 0;
+  }
+
+  a.element:last-of-type {
+    margin-right: 0;
+  }
+
+  a.element:hover {
+    cursor: pointer;
+    background-color: $dark-gray-background;
+  }
+}

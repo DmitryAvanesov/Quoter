@@ -37,10 +37,10 @@ ul.quotes {
 
   li.quote:hover {
     cursor: pointer;
-    background-color: $gray-background-selected;
+    background-color: $dark-gray-background;
   }
 
   li.quote.selected {
-    background-color: $gray-background-selected;
+    background-color: $dark-gray-background;
   }
 }
