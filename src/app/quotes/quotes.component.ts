@@ -26,9 +26,4 @@ export class QuotesComponent implements OnInit {
       this.quotes = quotes;
     });
   }
-
-  onClickQuote(quote: Quote): void {
-    this.selectedQuote = quote;
-    this.messageService.add(`Quote #${quote.id} selected`);
-  }
 }

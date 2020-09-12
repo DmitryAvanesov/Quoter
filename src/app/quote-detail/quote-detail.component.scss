@@ -1,0 +1,14 @@
+@import "../../styles.scss";
+
+span.subtitle {
+  font-weight: 700;
+}
+
+button.go-back-button {
+  cursor: pointer;
+  color: $blue-text;
+  background-color: $blue-background;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}

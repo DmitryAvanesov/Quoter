@@ -1,17 +1,12 @@
-<h2 class="title">MY QUOTES</h2>
+<h2 class="title">My quotes</h2>
 
 <ul class="quotes">
-  <li
-    class="quote"
-    [class.selected]="quote === selectedQuote"
-    *ngFor="let quote of quotes"
-    (click)="onClickQuote(quote)"
-  >
-    <span class="id">{{ quote.id }}</span>
-    <span class="author">{{ quote.author }}</span>
-    <br />
-    <span class="text">{{ quote.text }}</span>
+  <li class="quote" *ngFor="let quote of quotes">
+    <a class="detail-link" routerLink="/detail/{{quote.id}}">
+      <span class="id">{{ quote.id }}</span>
+      <span class="author">{{ quote.author }}</span>
+      <br />
+      <span class="text">{{ quote.text }}</span>
+    </a>
   </li>
 </ul>
-
-<app-quote-detail [quote]="selectedQuote"></app-quote-detail>

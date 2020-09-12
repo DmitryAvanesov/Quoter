@@ -14,4 +14,9 @@ export class QuoteService {
     this.messageService.add('Quotes received');
     return of(QUOTES);
   }
+
+  getQuote(id: number): Observable<Quote> {
+    this.messageService.add(`Quote #${id} received`);
+    return of(QUOTES[id]);
+  }
 }

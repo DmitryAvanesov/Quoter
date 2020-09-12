@@ -37,10 +37,7 @@ export const QUOTES: Quote[] = [
   {
     id: 6,
     author: 'William W. Purkey',
-    text: `You've gotta dance like there's nobody watching,
-      Love like you'll never be hurt,
-      Sing like there's nobody listening,
-      And live like it's heaven on earth.`,
+    text: `You've gotta dance like there's nobody watching,\nLove like you'll never be hurt,\nSing like there's nobody listening,\nAnd live like it's heaven on earth.`,
   },
   {
     id: 7,
