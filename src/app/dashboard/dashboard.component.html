@@ -1,7 +1,7 @@
 <h2 class="title">LAST QUOTES</h2>
 
 <div class="dashboard">
-  <a class="element" *ngFor="let quote of quotes">
+  <a class="element" *ngFor="let quote of quotes" routerLink="/detail/{{quote.id}}">
     <h3 class="author">{{quote.author}}</h3>
     <p class="text">{{quote.text}}</p>
   </a>

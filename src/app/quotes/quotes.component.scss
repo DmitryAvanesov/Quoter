@@ -11,10 +11,15 @@ ul.quotes {
   margin: 0;
   padding: 0;
 
-  li.quote {
+  a.detail-link {
+    display: block;
     margin: 25px 0;
     padding: 15px 10px 10px;
+    color: black;
     background-color: $gray-background;
+    text-decoration: none;
+    color: black;
+    text-decoration: none;
 
     span.id {
       color: $blue-text;
@@ -35,12 +40,8 @@ ul.quotes {
     }
   }
 
-  li.quote:hover {
+  a.detail-link:hover {
     cursor: pointer;
-    background-color: $dark-gray-background;
-  }
-
-  li.quote.selected {
     background-color: $dark-gray-background;
   }
 }
