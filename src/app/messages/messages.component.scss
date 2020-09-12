@@ -3,13 +3,6 @@
 div.messages-block {
   margin-top: 50px;
 
-  h2.title {
-    font-size: 2em;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 50px 0 10px;
-  }
-
   .clear-button {
     cursor: pointer;
     color: $blue-text;
@@ -17,6 +10,6 @@ div.messages-block {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 }
