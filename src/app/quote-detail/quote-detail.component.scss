@@ -2,6 +2,13 @@
 
 span.subtitle {
   font-weight: 700;
+  margin-right: 5px;
+}
+
+span.text {
+  white-space: pre-wrap;
+  display: inline-block;
+  vertical-align: top;
 }
 
 button.go-back-button {
