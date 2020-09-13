@@ -20,4 +20,14 @@ body {
     font-weight: 500;
     margin: 50px 0 15px;
   }
+
+  button.small-button {
+    cursor: pointer;
+    display: inline-block;
+    color: $blue-text;
+    background-color: $blue-background;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+  }
 }

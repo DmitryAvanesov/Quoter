@@ -5,17 +5,22 @@ span.subtitle {
   margin-right: 5px;
 }
 
-span.text {
-  white-space: pre-wrap;
-  display: inline-block;
-  vertical-align: top;
+input.text {
+  width: 250px;
+  outline-style: none;
+  font-size: 1em;
+  border: 1px solid $blue-background;
+  padding: 2px 4px;
 }
 
-button.go-back-button {
-  cursor: pointer;
-  color: $blue-text;
-  background-color: $blue-background;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
+div.button-panel {
+  margin-top: 15px;
+
+  * {
+    margin-right: 10px;
+  }
+
+  *:last-of-type {
+    margin-right: 0;
+  }
 }

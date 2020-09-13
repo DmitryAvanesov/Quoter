@@ -62,6 +62,12 @@ export class InMemoryDataService implements InMemoryDbService {
         author: 'Mahatma Gandhi',
         text: 'Be the change that you wish to see in the world.',
       },
+      {
+        id: 10,
+        author: 'Robert Frost',
+        text:
+          "In three words I can sum up everything I've learned about life: it goes on.",
+      },
     ];
 
     return { quotes };

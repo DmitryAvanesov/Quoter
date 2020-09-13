@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Quote } from './quote';
-import { QUOTES } from './mock-quotes';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -44,4 +43,15 @@ export class QuoteService {
       return of(result as T);
     };
   }
+
+  updateQuote(quote: Quote): Observable<any> {
+    return this.httpClient.put(this.quotesUrl, quote, this.httpOptions).pipe(
+      tap(() => this.log(`Updated quote #${quote.id}`)),
+      catchError(this.handleError<any>('updateQuote'))
+    );
+  }
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 }
