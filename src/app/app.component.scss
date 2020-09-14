@@ -1,9 +1,20 @@
 @import "../styles.scss";
 
-h1.title {
-  margin: 0 0 50px;
-  font-size: 5em;
-  font-weight: 100;
+a.title-link {
+  text-decoration: none;
+  display: block;
+  width: fit-content;
+
+  h1.title {
+    margin: 0 0 50px;
+    font-size: 7em;
+    color: black;
+    font-weight: 100;
+  }
+
+  h1.title:hover {
+    opacity: 0.5;
+  }
 }
 
 nav.navigation-panel {
