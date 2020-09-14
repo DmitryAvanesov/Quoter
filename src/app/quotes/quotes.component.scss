@@ -1,5 +1,21 @@
 @import "../../styles.scss";
 
+div.add-block {
+  label.input-label {
+    margin-right: 15px;
+    font-weight: 700;
+
+    input.inline-input {
+      margin-left: 10px;
+      font-size: 1em;
+    }
+  }
+
+  label.input-label:last-of-type {
+    margin-right: 25px;
+  }
+}
+
 ul.quotes {
   list-style-type: none;
   margin: 0;
@@ -30,6 +46,7 @@ ul.quotes {
     p.text {
       margin: 15px 0 0;
       white-space: pre-wrap;
+      word-break: break-word;
     }
   }
 

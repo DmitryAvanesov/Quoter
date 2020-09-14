@@ -73,7 +73,7 @@ export class InMemoryDataService implements InMemoryDbService {
     return { quotes };
   }
 
-  generateId(quotes: Quote[]): number {
+  genId(quotes: Quote[]): number {
     return quotes.length == 0 ? 0 : Math.max(...quotes.map((x) => x.id)) + 1;
   }
 }

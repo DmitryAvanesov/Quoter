@@ -44,6 +44,10 @@ export class QuoteService {
     };
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
+
   updateQuote(quote: Quote): Observable<any> {
     return this.httpClient.put(this.quotesUrl, quote, this.httpOptions).pipe(
       tap(() => this.log(`Updated quote #${quote.id}`)),
@@ -51,7 +55,14 @@ export class QuoteService {
     );
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
+  addQuote(quote: Quote): Observable<Quote> {
+    return this.httpClient
+      .post<Quote>(this.quotesUrl, quote, this.httpOptions)
+      .pipe(
+        tap((newQuote: Quote) =>
+          this.log(`Added quote #${newQuote.id} by ${quote.author}`)
+        ),
+        catchError(this.handleError<Quote>('addHero'))
+      );
+  }
 }

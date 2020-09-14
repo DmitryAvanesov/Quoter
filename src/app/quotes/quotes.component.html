@@ -1,8 +1,29 @@
 <h2 class="title">My quotes</h2>
 
+<div class="add-block">
+  <label class="input-label"
+    >Author:
+    <input class="inline-input" #authorInput />
+  </label>
+  <label class="input-label"
+    >Text:
+    <input class="inline-input" #textInput />
+  </label>
+  <button
+    class="small-button"
+    (click)="
+      add(authorInput.value, textInput.value);
+      authorInput.value = '';
+      textInput.value = ''
+    "
+  >
+    Add
+  </button>
+</div>
+
 <ul class="quotes">
   <li class="quote" *ngFor="let quote of quotes">
-    <a class="detail-link" routerLink="/detail/{{quote.id}}">
+    <a class="detail-link" routerLink="/detail/{{ quote.id }}">
       <span class="id">{{ quote.id }}</span>
       <span class="author">{{ quote.author }}</span>
       <br />

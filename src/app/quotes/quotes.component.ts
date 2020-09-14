@@ -26,4 +26,17 @@ export class QuotesComponent implements OnInit {
       this.quotes = quotes;
     });
   }
+
+  add(author: string, text: string) {
+    author = author.trim();
+    text = text.trim();
+
+    if (!author || !text) {
+      return;
+    }
+
+    this.quoteService.addQuote({ author, text } as Quote).subscribe((quote) => {
+      this.quotes.push(quote);
+    });
+  }
 }
