@@ -5,9 +5,13 @@ a.title-link {
 
   h1.title {
     margin: 0 0 50px;
-    font-size: 5em;
+    font-size: 7em;
     color: black;
     font-weight: 100;
+  }
+
+  h1.title:hover {
+    opacity: 0.5;
   }
 }
 
