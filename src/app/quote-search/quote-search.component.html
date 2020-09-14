@@ -1,0 +1,11 @@
+<div class="search-block">
+  <h2 class="title"><label for="quote-search">Search</label></h2>
+  <input id="quote-search" #quoteSearch (input)="search(quoteSearch.value)" />
+  <ul class="quotes">
+    <li class="quote" *ngFor="let quote of quotes$ | async">
+      <a class="quote-link" routerLink="/detail/{{ quote.id }}">
+        "{{ quote.text }}" - {{ quote.author }}
+      </a>
+    </li>
+  </ul>
+</div>

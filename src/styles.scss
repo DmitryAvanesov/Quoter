@@ -12,12 +12,23 @@ $blue-background: #e1ecf4;
 
 body {
   margin: 0;
-  padding: 15px 30px;
+  padding: 15px 30px 50px;
 
   h2.title {
     font-size: 2em;
     text-transform: uppercase;
     font-weight: 500;
     margin: 50px 0 15px;
+  }
+
+  button.small-button {
+    cursor: pointer;
+    display: inline-block;
+    color: $blue-text;
+    background-color: $blue-background;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
   }
 }
