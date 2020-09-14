@@ -75,4 +75,23 @@ export class QuoteService {
       catchError(this.handleError<Quote>('deleteQuote'))
     );
   }
+
+  searchQuotes(query: string): Observable<Quote[]> {
+    query = query.trim();
+
+    if (!query) {
+      return of([]);
+    }
+
+    const quoteUrl = `${this.quotesUrl}/?text=${query}`;
+
+    return this.httpClient.get<Quote[]>(quoteUrl).pipe(
+      tap((quotes: Quote[]) =>
+        quotes.length
+          ? this.log(`Found quotes matching "${query}" query`)
+          : this.log(`No quotes found matching "${query}" query`)
+      ),
+      catchError(this.handleError<Quote[]>('searchQuotes', []))
+    );
+  }
 }
