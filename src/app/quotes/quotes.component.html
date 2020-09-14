@@ -3,11 +3,11 @@
 <div class="add-block">
   <label class="input-label"
     >Author:
-    <input class="inline-input" #authorInput />
+    <input class="inline-input author-input" #authorInput />
   </label>
   <label class="input-label"
     >Text:
-    <input class="inline-input" #textInput />
+    <input class="inline-input text-input" #textInput />
   </label>
   <button
     class="small-button"
@@ -29,5 +29,12 @@
       <br />
       <p class="text">{{ quote.text }}</p>
     </a>
+    <button
+      class="small-button delete-button"
+      title="Delete"
+      (click)="delete(quote)"
+    >
+      X
+    </button>
   </li>
 </ul>

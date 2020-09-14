@@ -16,6 +16,18 @@ export class QuoteService {
 
   private quotesUrl = 'api/quotes';
 
+  private log(message: string): void {
+    this.messageService.add(message);
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      this.log(`${operation} failed: ${error.body.error}`);
+      return of(result as T);
+    };
+  }
+
   getQuotes(): Observable<Quote[]> {
     return this.httpClient.get<Quote[]>(this.quotesUrl).pipe(
       tap(() => this.log('Quotes received')),
@@ -30,18 +42,6 @@ export class QuoteService {
       tap(() => this.log(`Quote #${id} received`)),
       catchError(this.handleError<Quote>(`getQuote (#${id})`))
     );
-  }
-
-  private log(message: string): void {
-    this.messageService.add(message);
-  }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    };
   }
 
   httpOptions = {
@@ -64,5 +64,15 @@ export class QuoteService {
         ),
         catchError(this.handleError<Quote>('addHero'))
       );
+  }
+
+  deleteQuote(quote: Quote | number): Observable<Quote> {
+    const id = typeof quote === 'number' ? quote : quote.id;
+    const quoteUrl = `${this.quotesUrl}/${id}`;
+
+    return this.httpClient.delete<Quote>(quoteUrl, this.httpOptions).pipe(
+      tap(() => this.log(`Deleted quote #${id}`)),
+      catchError(this.handleError<Quote>('deleteQuote'))
+    );
   }
 }

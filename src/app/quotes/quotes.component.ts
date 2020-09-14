@@ -27,7 +27,7 @@ export class QuotesComponent implements OnInit {
     });
   }
 
-  add(author: string, text: string) {
+  add(author: string, text: string): void {
     author = author.trim();
     text = text.trim();
 
@@ -38,5 +38,10 @@ export class QuotesComponent implements OnInit {
     this.quoteService.addQuote({ author, text } as Quote).subscribe((quote) => {
       this.quotes.push(quote);
     });
+  }
+
+  delete(quote: Quote): void {
+    this.quotes = this.quotes.filter((q) => q != quote);
+    this.quoteService.deleteQuote(quote).subscribe();
   }
 }
