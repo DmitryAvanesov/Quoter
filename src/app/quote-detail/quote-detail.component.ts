@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Quote } from '../quote';
+import { Quote } from '../types';
 import { QuoteService } from '../quote.service';
 
 @Component({
@@ -16,14 +16,14 @@ export class QuoteDetailComponent implements OnInit {
     private quoteService: QuoteService
   ) {}
 
+  quote: Quote;
+
   ngOnInit(): void {
     this.getQuote();
   }
 
-  quote: Quote;
-
   getQuote(): void {
-    const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+    const id = parseInt(this.activatedRoute.snapshot.params.id, 10);
     this.quoteService.getQuote(id).subscribe((quote) => {
       this.quote = quote;
     });
