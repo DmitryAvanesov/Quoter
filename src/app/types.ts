@@ -3,3 +3,7 @@ export interface Quote {
   author: string;
   text: string;
 }
+
+export interface Database {
+  quotes: Quote[];
+}

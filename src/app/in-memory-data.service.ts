@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Quote } from './quote';
+import { Database, Quote } from './types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createDb() {
+  createDb(): Database {
     const quotes: Quote[] = [
       {
         id: 0,
@@ -74,6 +74,6 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   genId(quotes: Quote[]): number {
-    return quotes.length == 0 ? 0 : Math.max(...quotes.map((x) => x.id)) + 1;
+    return quotes.length === 0 ? 0 : Math.max(...quotes.map((x) => x.id)) + 1;
   }
 }

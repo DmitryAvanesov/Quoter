@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Quote } from '../quote';
+import { Quote } from '../types';
 import { QuoteService } from '../quote.service';
 
 @Component({
@@ -10,11 +10,11 @@ import { QuoteService } from '../quote.service';
 export class DashboardComponent implements OnInit {
   constructor(private quoteService: QuoteService) {}
 
+  quotes: Quote[];
+
   ngOnInit(): void {
     this.getQuotes();
   }
-
-  quotes: Quote[];
 
   getQuotes(): void {
     this.quoteService.getQuotes().subscribe((quotes) => {

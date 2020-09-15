@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Quote } from './quote';
+import { Quote } from './types';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -15,12 +15,18 @@ export class QuoteService {
   ) {}
 
   private quotesUrl = 'api/quotes';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
   private log(message: string): void {
     this.messageService.add(message);
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
+  private handleError<T>(
+    operation = 'operation',
+    result?: T
+  ): (error: any) => Observable<T> {
     return (error: any): Observable<T> => {
       console.error(error);
       this.log(`${operation} failed: ${error.body.error}`);
@@ -43,10 +49,6 @@ export class QuoteService {
       catchError(this.handleError<Quote>(`getQuote (#${id})`))
     );
   }
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
 
   updateQuote(quote: Quote): Observable<any> {
     return this.httpClient.put(this.quotesUrl, quote, this.httpOptions).pipe(

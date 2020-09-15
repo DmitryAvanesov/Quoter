@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Quote } from '../quote';
+import { Quote } from '../types';
 import { QuoteService } from '../quote.service';
 
 @Component({
@@ -12,6 +12,9 @@ import { QuoteService } from '../quote.service';
 export class QuoteSearchComponent implements OnInit {
   constructor(private quoteService: QuoteService) {}
 
+  quotes$: Observable<Quote[]>;
+  private searchQueries = new Subject<string>();
+
   ngOnInit(): void {
     this.quotes$ = this.searchQueries.pipe(
       debounceTime(500),
@@ -19,9 +22,6 @@ export class QuoteSearchComponent implements OnInit {
       switchMap((query: string) => this.quoteService.searchQuotes(query))
     );
   }
-
-  quotes$: Observable<Quote[]>;
-  private searchQueries = new Subject<string>();
 
   search(query: string): void {
     this.searchQueries.next(query);
